@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#a4a8d6">
+<title>Claire♡Dolls ファンサイト</title>
+<meta name="description" content="Claire♡Dolls（クレドル）のファンサイト。お知らせ、ライブスケジュール、メンバー紹介、動画まとめ。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext x='16' y='25' font-size='26' text-anchor='middle' fill='%23a4a8d6'%3E%E2%99%A5%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- 飾り用のパーツ（リボン・まつげ） -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <pattern id="gingham" width="6" height="6" patternUnits="userSpaceOnUse">
+      <rect width="6" height="6" fill="#fff"/>
+      <rect width="6" height="3" fill="#a4a8d6" opacity=".6"/>
+      <rect width="3" height="6" fill="#a4a8d6" opacity=".6"/>
+    </pattern>
+    <symbol id="bow" viewBox="0 0 48 28">
+      <path d="M24 14C17 3 5 -1 2.5 6.5 0.5 14 9 25 24 14Z" fill="url(#gingham)" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M24 14C31 3 43 -1 45.5 6.5 47.5 14 39 25 24 14Z" fill="url(#gingham)" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <rect x="19.5" y="8.5" width="9" height="11" rx="3.5" fill="#fff" stroke="currentColor" stroke-width="1.6"/>
+    </symbol>
+    <symbol id="eye" viewBox="0 0 30 16">
+      <path d="M3 5C9 14 21 14 27 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M7 10.5 4.5 14M15 12.6V16M23 10.5 25.5 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top"><svg class="ico" aria-hidden="true"><use href="#bow"/></svg>Claire♡Dolls</a>
+    <nav>
+      <a href="#news">NEWS</a>
+      <a href="#schedule">SCHEDULE</a>
+      <a href="#members">MEMBERS</a>
+      <a href="#videos">VIDEO</a>
+      <a href="#music">MUSIC</a>
+      <a href="#x">X</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero wrap">
+    <div class="hero-panel">
+      <span class="spark a">✦</span><span class="spark b">✧</span><span class="spark c">✦</span><span class="spark d">✧</span>
+      <h1 class="sr">Claire♡Dolls（クレドル）ファンサイト</h1>
+      <img class="logo-img" src="images/logo.webp" alt="Claire♡Dolls" width="336" height="200">
+      <span class="tag">FAN SITE</span>
+      <p class="sub"><span class="ph">「お人形」をコンセプトにした</span><span class="ph">王道・甘め路線の</span><span class="ph">アイドルグループ、</span><span class="ph">クレドルのファンサイトです。</span><span class="ph">最新情報や動画を</span><span class="ph">まとめています。</span></p>
+      <div class="btns">
+        <a class="btn fill" href="https://x.com/ClaireDolls2024" target="_blank" rel="noopener">公式Xを見る</a>
+        <a class="btn line" href="https://www.youtube.com/@ClaireDolls" target="_blank" rel="noopener">YouTubeを見る</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="news">
+    <div class="wrap">
+      <div class="eyes" aria-hidden="true"><svg><use href="#eye"/></svg><svg><use href="#eye"/></svg><svg><use href="#eye"/></svg></div>
+      <h2 class="title"><svg class="ico" aria-hidden="true"><use href="#bow"/></svg>NEWS</h2>
+      <p class="title-ja">お知らせ</p>
+      <div class="card"><ul class="list" id="news-list"></ul></div>
+    </div>
+  </section>
+
+  <section id="schedule" class="alt">
+    <div class="wrap">
+      <div class="eyes" aria-hidden="true"><svg><use href="#eye"/></svg><svg><use href="#eye"/></svg><svg><use href="#eye"/></svg></div>
+      <h2 class="title"><svg class="ico" aria-hidden="true"><use href="#bow"/></svg>SCHEDULE</h2>
+      <p class="title-ja">ライブ・イベント予定</p>
+      <div class="sch-tools" id="sch-tools"></div>
+      <div id="sch-list"></div>
+    </div>
+  </section>
+
+  <section id="members">
+    <div class="wrap">
+      <div class="eyes" aria-hidden="true"><svg><use href="#eye"/></svg><svg><use href="#eye"/></svg><svg><use href="#eye"/></svg></div>
+      <h2 class="title"><svg class="ico" aria-hidden="true"><use href="#bow"/></svg>MEMBERS</h2>
+      <p class="title-ja">メンバー紹介</p>
+      <p class="swipe-hint">← スワイプで他のメンバーを見る →<br>タップでプロフィール</p>
+      <div class="members" id="member-list"></div>
+      <p class="note">※ 写真は仮のものです。使用する画像が決まったら差し替えてください。</p>
+    </div>
+  </section>
+
+  <section id="videos" class="alt">
+    <div class="wrap">
+      <div class="eyes" aria-hidden="true"><svg><use href="#eye"/></svg><svg><use href="#eye"/></svg><svg><use href="#eye"/></svg></div>
+      <h2 class="title"><svg class="ico" aria-hidden="true"><use href="#bow"/></svg>VIDEO</h2>
+      <p class="title-ja">動画</p>
+      <div class="videos" id="video-list"></div>
+    </div>
+  </section>
+
+  <section id="music">
+    <div class="wrap">
+      <div class="eyes" aria-hidden="true"><svg><use href="#eye"/></svg><svg><use href="#eye"/></svg><svg><use href="#eye"/></svg></div>
+      <h2 class="title"><svg class="ico" aria-hidden="true"><use href="#bow"/></svg>MUSIC</h2>
+      <p class="title-ja">サブスク配信中の楽曲</p>
+      <p class="swipe-hint" id="music-hint" hidden>← スワイプで他の作品を見る →</p>
+      <div class="releases" id="music-list"></div>
+    </div>
+  </section>
+  <section id="x" class="alt">
+    <div class="wrap">
+      <div class="eyes" aria-hidden="true"><svg><use href="#eye"/></svg><svg><use href="#eye"/></svg><svg><use href="#eye"/></svg></div>
+      <h2 class="title"><svg class="ico" aria-hidden="true"><use href="#bow"/></svg>LATEST POSTS</h2>
+      <p class="title-ja">公式Xの最新投稿</p>
+      <div class="x-wrap">
+        <div class="card" id="tl-card">
+          <a class="twitter-timeline" data-height="520" data-lang="ja" data-chrome="noheader nofooter transparent"
+             href="https://twitter.com/ClaireDolls2024">@ClaireDolls2024 のポスト</a>
+          <div class="tl-fallback" id="tl-fallback" hidden>
+            <p>最新のポストをここに表示できませんでした。<br>公式Xで最新情報をチェックしてね。</p>
+          </div>
+        </div>
+        <p class="x-cta"><a class="x-btn" href="https://x.com/ClaireDolls2024" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>公式Xを見る</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- メンバープロフィール（スマホ＝ボトムシート／PC＝中央モーダル） -->
+<dialog id="profile" aria-label="メンバープロフィール">
+  <div class="sheet" id="sheet">
+    <div class="grab" id="grab" aria-hidden="true"><span></span></div>
+    <div class="p-photo">
+      <img id="p-img" alt="">
+      <button class="p-nav prev" type="button" id="p-prev" aria-label="前のメンバー">‹</button>
+      <button class="p-nav next" type="button" id="p-next" aria-label="次のメンバー">›</button>
+    </div>
+    <button class="p-close" type="button" id="p-close" aria-label="閉じる">×</button>
+    <div class="p-body" id="p-body">
+      <p class="p-color"><i></i><span id="p-colorname"></span></p>
+      <h3 id="p-name"></h3>
+      <p class="p-read" id="p-read"></p>
+      <dl class="p-facts" id="p-facts"></dl>
+      <div class="p-comment"><h4>ひとこと</h4><p id="p-comment"></p></div>
+      <div class="p-links" id="p-links"></div>
+    </div>
+  </div>
+</dialog>
+
+<footer>
+  <span class="brand"><svg class="ico" aria-hidden="true"><use href="#bow"/></svg>Claire♡Dolls Fan Site</span>
+  <div>非公式のファンサイトです。掲載内容は公式の発表をご確認ください。</div>
+</footer>
+
+<!-- 更新するのは data/ の中のファイルだけ -->
+<script src="data/news.js"></script>
+<script src="data/schedule.js"></script>
+<script src="data/members.js"></script>
+<script src="data/videos.js"></script>
+<script src="data/music.js"></script>
+<script src="js/main.js"></script>
+<script src="js/x-embed.js"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8" onerror="window.__tlFail&&window.__tlFail()"></script>
+</body>
+</html>
