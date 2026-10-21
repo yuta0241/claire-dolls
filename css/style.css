@@ -409,3 +409,19 @@ footer .brand{justify-content:center;margin-bottom:6px}
   nav a:active{background:var(--mist);color:var(--peri-deep)}
   body{padding-bottom:84px}
 }
+
+/* ---- スマホ: 日付タップの予定シート ---- */
+dialog#daysheet{padding:0;border:0;background:transparent;color:var(--ink);max-width:none;max-height:none;overflow:visible;margin:auto 0 0;width:100%}
+dialog#daysheet::backdrop{background:rgba(72,74,114,.48);backdrop-filter:blur(3px)}
+dialog#daysheet[open]::backdrop{animation:pfade .25s ease-out}
+dialog#daysheet.closing::backdrop{animation:pfadeout .22s ease-in forwards}
+.ds-sheet{position:relative;display:flex;flex-direction:column;max-height:82dvh;background:var(--white);border-radius:28px 28px 0 0;box-shadow:0 -10px 40px rgba(72,74,114,.25);overflow:hidden}
+dialog#daysheet[open] .ds-sheet{animation:pup .34s cubic-bezier(.2,.8,.2,1)}
+dialog#daysheet.closing .ds-sheet{animation:pdown .22s ease-in forwards}
+.ds-sheet .grab{position:relative;flex:none;height:30px}
+.ds-sheet .grab .ds-bar{background:var(--line);box-shadow:none;width:44px;height:5px;border-radius:99px}
+.ds-sheet .p-close{top:8px;right:12px;width:34px;height:34px;font-size:20px;box-shadow:0 1px 6px rgba(72,74,114,.2)}
+.ds-body{overflow-y:auto;padding:4px 18px calc(24px + env(safe-area-inset-bottom));overscroll-behavior:contain}
+.ds-body .day{margin:0}
+.ds-body .day.past{opacity:1}
+@media(min-width:701px){dialog#daysheet{display:none!important}}

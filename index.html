@@ -113,6 +113,14 @@
 </main>
 
 <!-- メンバープロフィール（スマホ＝ボトムシート／PC＝中央モーダル） -->
+<dialog id="daysheet" aria-label="この日の予定">
+  <div class="ds-sheet" id="ds-sheet">
+    <div class="grab" id="ds-grab" aria-hidden="true"><span class="ds-bar"></span></div>
+    <button class="p-close" type="button" id="ds-close" aria-label="閉じる">×</button>
+    <div class="ds-body" id="ds-body"></div>
+  </div>
+</dialog>
+
 <dialog id="profile" aria-label="メンバープロフィール">
   <div class="sheet" id="sheet">
     <div class="grab" id="grab" aria-hidden="true"><span></span></div>

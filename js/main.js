@@ -39,6 +39,8 @@ function gcalUrl(e){
 }
 function mapUrl(e){ return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent([e.venue, e.address].filter(Boolean).join(" ")); }
 
+const isMobile = () => window.matchMedia("(max-width:700px)").matches;
+let dayHtmlCache = "";
 const schState = {month:null, showPast:false, majorOnly:false, open:new Set(), view:"cal", sel:null};
 
 const KIND = {live:"", cheki:"チェキ会", event:"イベント"};
@@ -134,7 +136,9 @@ function renderCal(all, inMonth, months, mLabel, nextEv, today){
       ${items.length > 1 ? `<span class="day-n">この日は${items.length}本</span>` : ""}</div>
       <div class="day-events">${items.map(e => evCard(e, e._id, nextEv && e._id === nextEv._id)).join("")}</div></div>`;
   }
-  document.getElementById("sch-list").innerHTML = cal + (dates.length ? `<p class="cal-hint">印のある日をタップすると、その日の予定が下に表示されます</p>` : "") + detail;
+  const mob = isMobile();
+  dayHtmlCache = dates.length ? detail : "";
+  document.getElementById("sch-list").innerHTML = cal + (dates.length ? `<p class="cal-hint">印のある日をタップすると、その日の予定が${mob ? "開きます" : "下に表示されます"}</p>` : "") + (mob && dates.length ? "" : detail);
 }
 
 function renderSchedule(){
@@ -178,10 +182,10 @@ function renderSchedule(){
     </div>`;
   }).join("");
 }
-document.getElementById("schedule").addEventListener("click", ev => {
+const schClick = ev => {
   const t = ev.target.closest("button"); if (!t) return;
   if (t.dataset.view) { schState.view = t.dataset.view; renderSchedule(); }
-  else if (t.dataset.day) { schState.sel = t.dataset.day; renderSchedule(); }
+  else if (t.dataset.day) { schState.sel = t.dataset.day; renderSchedule(); if (isMobile()) openDay(); }
   else if (t.dataset.m) { schState.month = t.dataset.m; schState.showPast = false; schState.sel = null; renderSchedule(); }
   else if (t.dataset.major) { schState.majorOnly = !schState.majorOnly; renderSchedule(); }
   else if (t.dataset.past) { schState.showPast = !schState.showPast; renderSchedule(); }
@@ -190,7 +194,8 @@ document.getElementById("schedule").addEventListener("click", ev => {
     box.hidden = !open; t.setAttribute("aria-expanded", open);
     open ? schState.open.add(id) : schState.open.delete(id);
   }
-});
+};
+document.getElementById("schedule").addEventListener("click", schClick);
 renderSchedule();
 
 document.getElementById("member-list").innerHTML = MEMBERS.map((m,i) => `
@@ -306,3 +311,38 @@ document.getElementById("music-hint").hidden = MUSIC.length < 2;
 document.getElementById("video-list").innerHTML = VIDEOS.length
   ? VIDEOS.map(v => `<div class="video"><div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.id)}" title="${esc(v.title)}" loading="lazy" allowfullscreen></iframe></div><p>${esc(v.title)}</p></div>`).join("")
   : `<div class="card video-empty"><p style="margin:0 0 12px">動画はここに並びます。</p><a class="btn line" href="https://www.youtube.com/@ClaireDolls" target="_blank" rel="noopener">YouTubeチャンネルへ</a></div>`;
+
+
+/* ---------- スマホ：日付タップで予定シートを開く ---------- */
+const dsheet = document.getElementById("daysheet"), dbox = document.getElementById("ds-body");
+function openDay(){
+  dbox.innerHTML = dayHtmlCache;
+  dbox.scrollTop = 0;
+  root.classList.add("lock");
+  if (!dsheet.open) dsheet.showModal();
+}
+function closeDay(){
+  if (!dsheet.open || dsheet.classList.contains("closing")) return;
+  dsheet.classList.add("closing");
+  let done = false;
+  const box = document.getElementById("ds-sheet");
+  const finish = () => { if (done) return; done = true; dsheet.classList.remove("closing"); box.style.transform = ""; box.style.transition = ""; dsheet.close(); };
+  box.addEventListener("animationend", finish, {once:true});
+  setTimeout(finish, 400);
+}
+document.getElementById("ds-close").addEventListener("click", closeDay);
+dsheet.addEventListener("click", e => { if (e.target === dsheet) closeDay(); else schClick(e); });
+dsheet.addEventListener("cancel", e => { e.preventDefault(); closeDay(); });
+dsheet.addEventListener("close", () => root.classList.remove("lock"));
+window.matchMedia("(max-width:700px)").addEventListener("change", () => { if (dsheet.open) dsheet.close(); renderSchedule(); });
+(() => {
+  const grab = document.getElementById("ds-grab"), box = document.getElementById("ds-sheet");
+  let y0 = null;
+  grab.addEventListener("pointerdown", e => { y0 = e.clientY; grab.setPointerCapture(e.pointerId); box.style.transition = "none"; });
+  grab.addEventListener("pointermove", e => { if (y0 === null) return; box.style.transform = `translateY(${Math.max(0, e.clientY - y0)}px)`; });
+  const end = e => {
+    if (y0 === null) return; const dy = e.clientY - y0; y0 = null;
+    if (dy > 90) closeDay(); else { box.style.transition = "transform .2s"; box.style.transform = ""; }
+  };
+  grab.addEventListener("pointerup", end); grab.addEventListener("pointercancel", end);
+})();
