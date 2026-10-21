@@ -134,7 +134,7 @@ const SCHEDULE = [
    price:"前方4000円/一般2500円（当日+1000円）", perk:"後日お知らせ", ticket:""},
   {date:"2026-11-07", name:"MARQUEE祭mini Vol.354", venue:"Spotify O-nest", address:"", major:true,
    open:"10:30", start:"11:00", live:"11:40-12:00", meet:"12:10-13:10",
-   price:"前売3000円/当日3500円", perk:"後日お知らせ", ticket:""},
+   price:"前売3000円/当日3500円", perk:"後日お知らせ", ticket:"https://eplus.jp/sf/detail/2029630001"},
   {date:"2026-11-08", name:"アイドル道場 Vol.72", venue:"渋谷VIDENT", address:"",
    open:"9:30", start:"9:40", live:"", meet:"",
    price:"前方4000円/一般2500円（当日+1000円）", perk:"後日お知らせ", ticket:""},
