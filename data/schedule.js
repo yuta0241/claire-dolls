@@ -27,7 +27,7 @@ const SCHEDULE = [
   {date:"2026-10-29", name:"IDOL SCENE Halloween（ハロウィンコスプレ公演）", venue:"渋谷RING", address:"",
    open:"15:00", start:"15:20", live:"19:10-19:30", meet:"19:35-20:35",
    price:"前方6000円/一般3000円", perk:"11月推しメンチャレンジ or 落書き写メ +3pt",
-   ticket:""},
+   ticket:"https://ticketdive.com/event/1029_IDOLSCENE"},
   {date:"2026-10-31", name:"PLUMLIVE #129 -Halloween Special Live-（ハロウィンコスプレ）", venue:"Zirco TOKYO", address:"",
    open:"9:00", start:"9:20", live:"12:00-12:20", meet:"12:20-13:20",
    price:"前方4000円/一般2500円", perk:"あなたへのトリックオアトリート（お菓子）+3pt",
