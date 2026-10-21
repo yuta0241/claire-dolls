@@ -209,8 +209,8 @@ dialog#profile.closing .sheet{animation:pdown .22s ease-in forwards}
 
 .grab{position:absolute;top:0;left:0;right:0;height:34px;z-index:3;display:flex;justify-content:center;align-items:center;touch-action:none;cursor:grab}
 .grab span{width:44px;height:5px;border-radius:99px;background:rgba(255,255,255,.92);box-shadow:0 1px 4px rgba(0,0,0,.3)}
-.p-photo{position:relative;flex:none;height:clamp(220px,38dvh,400px);background:var(--mist);border-bottom:5px solid var(--mc);box-shadow:inset 0 -1px 0 var(--line)}
-.p-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.p-photo{position:relative;flex:none;height:min(133vw,56dvh);max-height:520px;background:var(--mist);border-bottom:5px solid var(--mc);box-shadow:inset 0 -1px 0 var(--line)}
+.p-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 8%}
 .p-close,.p-nav{position:absolute;z-index:4;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.9);color:var(--peri-deep);font-size:24px;line-height:1;cursor:pointer;box-shadow:0 2px 8px rgba(72,74,114,.25);display:flex;align-items:center;justify-content:center;padding:0 0 3px;font-family:"Fredoka",sans-serif;-webkit-tap-highlight-color:transparent}
 .p-close{top:14px;right:14px}
 .p-nav{top:50%;margin-top:-20px}
@@ -247,7 +247,7 @@ a.p-link:hover{background:var(--peri-deep);color:#fff}
   .grab{display:none}
   dialog#profile{margin:auto;width:min(820px,92vw)}
   .sheet{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);grid-template-rows:minmax(0,1fr);max-height:88vh;border-radius:28px;box-shadow:0 20px 60px rgba(72,74,114,.35)}
-  .p-photo{height:auto;min-height:500px;border-bottom:0;border-right:5px solid var(--mc);box-shadow:none}
+  .p-photo{height:auto;max-height:none;min-height:500px;border-bottom:0;border-right:5px solid var(--mc);box-shadow:none}
   .p-body{padding:36px 32px}
   dialog#profile[open] .sheet{animation:ppop .28s cubic-bezier(.2,.9,.3,1.2)}
   dialog#profile.closing .sheet{animation:ppopout .18s ease-in forwards}
