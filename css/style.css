@@ -425,3 +425,13 @@ dialog#daysheet.closing .ds-sheet{animation:pdown .22s ease-in forwards}
 .ds-body .day{margin:0}
 .ds-body .day.past{opacity:1}
 @media(min-width:701px){dialog#daysheet{display:none!important}}
+
+/* ---- トップ：お人形ラインナップ（5人1段） ---- */
+.dolls{list-style:none;margin:22px auto 0;padding:0 0 10px;display:flex;align-items:flex-end;gap:2px;max-width:640px}
+.dolls li{flex:1 1 0;min-width:0;position:relative;animation:dfloat 4.6s ease-in-out infinite;animation-delay:calc(var(--i) * -.9s)}
+.dolls li::after{content:"";position:absolute;left:14%;right:14%;bottom:-4px;height:9px;border-radius:50%;background:var(--mc);opacity:.4;filter:blur(4px);z-index:-1}
+.dolls button{display:block;width:100%;padding:0;border:0;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .18s}
+.dolls button:hover{transform:translateY(-6px) rotate(-1.5deg)}
+.dolls img{display:block;width:100%;height:auto;filter:drop-shadow(0 3px 6px rgba(108,112,168,.3))}
+@keyframes dfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@media(prefers-reduced-motion:reduce){.dolls li{animation:none}}

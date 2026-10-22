@@ -346,3 +346,12 @@ window.matchMedia("(max-width:700px)").addEventListener("change", () => { if (ds
   };
   grab.addEventListener("pointerup", end); grab.addEventListener("pointercancel", end);
 })();
+
+
+/* ---------- トップ：お人形ラインナップ（5人1段・重ならない） ---------- */
+const DOLL_R = {emiri:.685, harumi:.55, amo:.665, chiru:.585, karen:.552};   // 幅÷高さ（高さをそろえるため）
+document.getElementById("dolls").innerHTML = MEMBERS.map((m,i) => `
+  <li style="--mc:${m.color};--i:${i};flex-grow:${DOLL_R[m.photo.split("/").pop().replace(".webp","")] || .6}"><button type="button" data-i="${i}" aria-haspopup="dialog" aria-label="${esc(m.name)}のプロフィールを見る"><img src="images/${m.photo.split("/").pop().replace(".webp","")}-doll.webp" alt="" loading="lazy"></button></li>`).join("");
+document.getElementById("dolls").addEventListener("click", e => {
+  const b = e.target.closest("button[data-i]"); if (b) openProfile(+b.dataset.i);
+});
