@@ -151,4 +151,12 @@ const SCHEDULE = [
    open:"11:30", start:"11:50", live:"13:30-13:50", meet:"14:00-15:00",
    price:"前方4000円/一般2500円（当日+500円）", perk:"クレドルくじ +3pt",
    ticket:"https://t.co/DGOIpGESuD", post:"2113235447497511015"},
+  {date:"2026-11-21", name:"ポッケからきゅんっふぇす！", venue:"Zirco TOKYO", address:"",
+   open:"9:20", start:"9:35", live:"", meet:"",
+   price:"優先4000円/一般2500円（当日+1000円）", perk:"後日お知らせ",
+   ticket:"https://t.co/TYU4HGG9Cj", post:"2113223364584394920"},
+  {date:"2026-11-29", name:"MOGUMOGU music", venue:"五反田サーキット", address:"",
+   open:"", start:"", live:"", meet:"",
+   price:"前方6000円/一般3000円（当日+1000円）", perk:"",
+   ticket:"https://t.co/pKzjLFyf9c", post:"2113196957422510217"},
 ];
