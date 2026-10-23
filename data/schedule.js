@@ -119,7 +119,7 @@ const SCHEDULE = [
    open:"12:15", start:"12:30", live:"19:45-20:05", meet:"終演後",
    price:"前方2000円/一般500円/当日+1000円", perk:"チェキ落書き券 +1pt", ticket:""},
   {date:"2026-10-24", kind:"live", name:"GIRLS MUSIC SQUARE @新宿 1部", venue:"シアターマーキュリー新宿", address:"東京都新宿区新宿3丁目30-13",
-   open:"11:10", start:"11:30", live:"12:10-12:30", meet:"",
+   open:"11:10", start:"11:30", live:"12:10-12:30", meet:"12:35-13:30",
    price:"前方4500円/一般2500円/当日+500円", perk:"11月推しメンチャレンジ or 私物プレゼント +3pt", ticket:"https://tiget.net/events/531623", major:true},
   {date:"2026-10-26", kind:"event", name:"アイドル109人展", venue:"SHIBUYA109 渋谷店 B1階 DISP!!!", address:"", members:["嶋田 はるみ","遠藤 えみり","煌 かれん"],
    open:"", start:"", live:"", meet:"",
