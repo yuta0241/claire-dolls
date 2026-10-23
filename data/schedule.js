@@ -57,7 +57,7 @@ const SCHEDULE = [
    price:"写真展入場料1000円", perk:"", ticket:""},
   {date:"2026-10-24", kind:"live", name:"GOTANDA DREAMBOX 〜Halloween 1Coin Live special〜", venue:"GOTANDA G6", address:"",
    open:"10:00", start:"10:20", live:"18:30-18:50", meet:"19:20-20:10",
-   price:"前方2000円（1D）/一般500円（2D）", perk:"トーク付き写メ +1pt", ticket:""},
+   price:"前方2000円（1D）/一般500円（2D）", perk:"トーク付き写メ +1pt", ticket:"https://ticketdive.com/event/DREAMBOX1024"},
   {date:"2026-10-03", kind:"live", name:"MARQUEE祭mini Vol.348", venue:"Spotify O-nest", address:"",
    open:"10:30", start:"11:00", live:"11:00-11:20", meet:"11:30-12:30",
    price:"前売3000円/当日3500円", perk:"お手紙 +5pt", ticket:""},
