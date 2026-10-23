@@ -159,4 +159,13 @@ const SCHEDULE = [
    open:"", start:"", live:"", meet:"",
    price:"前方6000円/一般3000円（当日+1000円）", perk:"",
    ticket:"https://t.co/pKzjLFyf9c", post:"2113196957422510217"},
+  {date:"2026-10-25", kind:"live", name:"ライブ（詳細は後日）", venue:"渋谷音楽堂", address:"",
+   open:"", start:"", live:"", meet:"",
+   price:"", perk:"", ticket:""},
+  {date:"2026-10-27", kind:"live", name:"ライブ（詳細は後日）", venue:"TwinBox AKIHABARA", address:"",
+   open:"", start:"", live:"", meet:"",
+   price:"", perk:"", ticket:""},
+  {date:"2026-11-01", kind:"live", name:"ライブ（詳細は後日）", venue:"渋谷VIDENT", address:"",
+   open:"", start:"", live:"", meet:"",
+   price:"", perk:"", ticket:""},
 ];
