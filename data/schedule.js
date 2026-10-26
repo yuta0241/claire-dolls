@@ -168,4 +168,7 @@ const SCHEDULE = [
   {date:"2026-11-01", kind:"live", name:"ライブ（詳細は後日）", venue:"渋谷VIDENT", address:"",
    open:"", start:"", live:"", meet:"",
    price:"", perk:"", ticket:""},
+  {date:"2026-11-03", kind:"live", name:"アイドル過剰摂取", venue:"KMAパラダイスホール", address:"",
+   open:"13:15", start:"13:30", live:"18:10-18:25", meet:"18:30-19:30",
+   price:"前方5000円/一般3000円/女性1000円", perk:"推しメン過剰摂取（1分間写メ動画撮り放題）", ticket:""},
 ];
