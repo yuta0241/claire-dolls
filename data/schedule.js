@@ -192,4 +192,10 @@ const SCHEDULE = [
   {date:"2026-11-12", kind:"live", name:"FRONTIER IDOL SUMMIT@Zirco TOKYO", venue:"Zirco TOKYO", address:"",
    open:"16:00", start:"16:30", live:"20:40-21:00", meet:"終演後",
    price:"前方3500円/一般2500円（当日+1000円）", perk:"ハロウィンランチェキ or 落書き写メ +3pt", ticket:""},
+  {date:"2026-11-14", kind:"live", name:"KIRA KIRA de Fes mini !!", venue:"上野AL-TEMA", address:"",
+   open:"9:35", start:"9:50", live:"13:15-13:30", meet:"13:50-14:40",
+   price:"最前（着席）5000円/前方2000円/通常0円（当日各+500円）", perk:"最前・前方：チェキ落書き券 +1pt／通常：+1pt", ticket:""},
+  {date:"2026-11-14", kind:"live", name:"はなまるっ Vol.160", venue:"浅草VAMPKIN", address:"",
+   open:"9:50", start:"10:00", live:"16:45-17:05", meet:"17:10-18:10",
+   price:"前方4500円/一般2500円（当日+500円）", perk:"落書き写メ +3pt", ticket:""},
 ];
