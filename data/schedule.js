@@ -198,4 +198,7 @@ const SCHEDULE = [
   {date:"2026-11-14", kind:"live", name:"はなまるっ Vol.160", venue:"浅草VAMPKIN", address:"",
    open:"9:50", start:"10:00", live:"16:45-17:05", meet:"17:10-18:10",
    price:"前方4500円/一般2500円（当日+500円）", perk:"落書き写メ +3pt", ticket:""},
+  {date:"2026-11-19", kind:"live", name:"NIPPON MUSIC JAM mini", venue:"S.U.B TOKYO", address:"",
+   open:"16:00", start:"16:10", live:"18:35-18:55", meet:"19:05-20:05",
+   price:"前方3500円/一般2500円（当日+1000円）", perk:"落書き写メ +1pt", ticket:""},
 ];
